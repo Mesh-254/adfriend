@@ -10,7 +10,7 @@
   "background_color": "#ffffff",
 
   "permissions": [
-    "scripting", "activeTab"
+    "scripting", "activeTab", "tabs"
   ],
     
 

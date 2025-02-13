@@ -1,11 +1,11 @@
 (() => {
     // Show an alert when clicking any link
-    document.addEventListener("click", function (event) {
-        let target = event.target.closest("a");
-        if (target && target.href) {
-            alert("You are about to visit " + target.href + " Now");
-        }
-    });
+    // document.addEventListener("click", function (event) {
+    //     let target = event.target.closest("a");
+    //     if (target && target.href) {
+    //         alert("You are about to visit " + target.href + " Now");
+    //     }
+    // });
 
     const positiveHTML = "<h2>Ads Friend neutralizer! 🚀</h2>";
 
@@ -40,6 +40,14 @@
 
         // call replace ads to replace the ads with other info
         replaceAds(ads);
+
+        // Check if any ads were detected
+        const adsPresent = ads.length > 0;
+
+        // Send the result back to the background script
+        chrome.runtime.sendMessage({ adsDetected: adsPresent });
+
+
     });
 
     // global MutationObserver with debouncing to ensure the positive content persists.
