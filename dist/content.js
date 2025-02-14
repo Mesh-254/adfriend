@@ -7,12 +7,14 @@
     //     }
     // });
 
-    const positiveHTML = "<h2>Ads Friend neutralizer! 🚀</h2>";
+    const positiveHTML = "<p>Ads Friend neutralizer! 🚀</p>";
+    // const content = "<a href='https://realtimearticles.co>m'AdsFriend</a>";
 
     // Function to replace ad content on a given element if it doesn't match the positive message.
     const replaceAdsOnElement = (ad) => {
-        if (ad.innerHTML !== positiveHTML) {
+        if (ad.innerHTML !== positiveHTML) { 
             ad.innerHTML = positiveHTML;
+            // ad.innerText = content
             ad.style.backgroundColor = "#f4f4f4";
             ad.style.padding = "20px";
             ad.style.textAlign = "center";
@@ -46,6 +48,7 @@
 
         // Send the result back to the background script
         chrome.runtime.sendMessage({ adsDetected: adsPresent });
+        
 
 
     });
